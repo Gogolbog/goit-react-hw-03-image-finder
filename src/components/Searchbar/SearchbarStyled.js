@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Header = styled.header`
-top: 0;
+  top: 0;
   left: 0;
   position: sticky;
   z-index: 1100;
@@ -17,7 +17,6 @@ top: 0;
   background-color: #3f51b5;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-
 `;
 
 export const SearchForm = styled.form`
@@ -31,11 +30,10 @@ export const SearchForm = styled.form`
 `;
 
 export const SearchFormBtn = styled.button`
-display: inline-block;
+  display: inline-block;
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
@@ -44,12 +42,12 @@ display: inline-block;
   cursor: pointer;
   outline: none;
   &:hover {
-  opacity: 1;
-}
+    opacity: 1;
+  }
 `;
 
 export const SearchFormBtnLabel = styled.span`
-    position: absolute;
+  position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
@@ -61,7 +59,7 @@ export const SearchFormBtnLabel = styled.span`
 `;
 
 export const SearchFormInput = styled.input`
- display: inline-block;
+  display: inline-block;
   width: 100%;
   font: inherit;
   font-size: 20px;
@@ -71,7 +69,7 @@ export const SearchFormInput = styled.input`
   padding-right: 4px;
 
   &::placeholder {
-  font: inherit;
-  font-size: 18px;
-}
+    font: inherit;
+    font-size: 18px;
+  }
 `;
