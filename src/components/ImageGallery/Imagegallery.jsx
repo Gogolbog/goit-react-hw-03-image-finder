@@ -16,3 +16,7 @@ export const ImageGallery = ({ galleryArr }) => {
     </Ul>
   );
 };
+
+ImageGallery.propTypes = {
+  galleryArr: PropTypes.arrayOf(PropTypes.object),
+};
