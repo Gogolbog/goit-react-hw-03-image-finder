@@ -29,8 +29,7 @@ class App extends Component {
               'Sorry, there are no images matching your search query. Please try again.'
             );
           }
-          const galleryLength = data.hits.length < 12;
-          this.setState({ showBtn: galleryLength ? false : true });
+          this.galleryLengthCheck(data);
           this.setState({
             images: data.hits,
           });
@@ -48,10 +47,21 @@ class App extends Component {
     this.setState({ searchValue });
   };
 
+  galleryLengthCheck = data => {
+    const galleryLength = data.hits.length < 12;
+    if (galleryLength) {
+      this.setState({ showBtn: false });
+      Notiflix.Notify.info('These are all images per your request');
+    } else {
+      this.setState({ showBtn: true });
+    }
+  };
+
   onClick = async () => {
     try {
       await apiSearchImg.incrementPage();
       const data = await apiSearchImg.getImg(this.state.searchValue);
+      this.galleryLengthCheck(data);
       this.setState(prevState => ({
         images: [...prevState.images, ...data.hits],
       }));
