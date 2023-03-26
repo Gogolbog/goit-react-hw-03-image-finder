@@ -26,7 +26,8 @@ class App extends Component {
         .then(data => {
           if (data.hits.length === 0) {
             return Notiflix.Notify.failure(
-              'Sorry, there are no images matching your search query. Please try again.'
+              'Sorry, there are no images matching your search query. Please try again.',
+              { width: '400px', fontSize: '20px' }
             );
           }
           this.galleryLengthCheck(data);
@@ -51,7 +52,10 @@ class App extends Component {
     const galleryLength = data.hits.length < 12;
     if (galleryLength) {
       this.setState({ showBtn: false });
-      Notiflix.Notify.info('These are all images per your request');
+      Notiflix.Notify.info('These are all images per your request', {
+        width: '400px',
+        fontSize: '20px',
+      });
     } else {
       this.setState({ showBtn: true });
     }
